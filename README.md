@@ -1,2 +1,43 @@
-# Cartoon-Rendering-Using-OpenCV
-Cartton Rendering Using my dog picture and Open CV
+# Cartoon Rendering Using OpenCV
+
+이 프로그램은 OpenCV 라이브러리를 사용하여 이미지를 만화 스타일로 렌더링하는 Python 스크립트입니다. 강아지 사진을 입력으로 받아 엣지 검출과 필터링을 통해 만화 같은 효과를 적용합니다.
+
+## 기능 설명
+
+- **이미지 로드**: 'Mong.jpg' 파일을 로드합니다.
+- **회색조 변환**: 이미지를 회색조로 변환하여 엣지 검출을 준비합니다.
+- **노이즈 제거**: 가우시안 블러를 적용하여 노이즈를 제거합니다.
+- **엣지 검출**: 적응형 임계값(adaptiveThreshold)을 사용하여 엣지를 검출합니다.
+- **컬러 부드럽게 하기**: 양방향 필터(bilateralFilter)를 적용하여 컬러 이미지를 부드럽게 합니다.
+- **만화 효과 결합**: 엣지와 부드러운 컬러 이미지를 결합하여 만화 렌더링 효과를 만듭니다.
+- **결과 표시**: 창에 만화 스타일의 이미지를 표시합니다.
+
+## 요구사항
+
+- Python 3.x
+- OpenCV 라이브러리 (설치: `pip install opencv-python`)
+- 'Mong.jpg' 이미지 파일 (프로젝트 폴더에 있어야 함)
+
+## 사용법
+
+1. Python 환경에 OpenCV를 설치하세요:
+   ```
+   pip install opencv-python
+   ```
+
+2. 'Mong.jpg' 파일을 프로젝트 폴더에 넣으세요.
+
+3. 스크립트를 실행하세요:
+   ```
+   python "Cartoon Rendering Using OpenCV.py"
+   ```
+
+4. 창이 열리면 이미지를 확인하고, 아무 키나 눌러 창을 닫으세요.
+
+## 예시 출력
+
+스크립트를 실행하면 "Cartoon Rendering" 창에 만화 스타일로 변환된 이미지가 표시됩니다.
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자유롭게 사용하고 수정하세요.
