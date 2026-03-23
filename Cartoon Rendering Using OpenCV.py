@@ -1,10 +1,18 @@
 import cv2
+import numpy as np
 
 # 강아지 사진 이미지 로드
-img = cv2.imread('Mong.jpg')
+img = cv2.imread('Nature image.jpg')
 
-#회색조로 변환
+#회색조로 변환(컬러 이미지를 흑백 이미지로 바꿔 각 픽셀의 밝기 값만을 남김)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+# 히스토그램 평활화 적용 (대비 향상)
+gray = cv2.equalizeHist(gray)
+
+# 샤프닝 필터 적용 (선명하게 만들기)
+kernel = np.array([[-1,-1,-1], [-1,9,-1], [-1,-1,-1]])
+gray = cv2.filter2D(gray, -1, kernel)
 
 #노이즈 제거를 위한 가우시안 블러 적용
 gray = cv2.GaussianBlur(gray, (5, 5), 0)
